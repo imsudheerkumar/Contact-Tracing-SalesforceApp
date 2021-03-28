@@ -16,12 +16,14 @@ public with sharing class CTPersonTracingController {
     **/
     public static List<People_Tracing__c> getRecentHealthChanges(String recordId){
         return [SELECT Id, Name, Person_1__c, Person_2__c, Contact_Type__c,
+                Person_1__r.Health_Status__c,Person_1__r.Token__c,
+                Person_2__r.Health_Status__c,Person_2__r.Token__c,
                 Contact_Date__c FROM People_Tracing__c 
                 WHERE Id=:recordId WITH SECURITY_ENFORCED 
                 ORDER BY Contact_Date__c];
     }
 
     public static List<People_Tracing__c> checkDuplicates(List<People_Tracing__c> peopleTraces){
-        
+        return null;
     }
 }
