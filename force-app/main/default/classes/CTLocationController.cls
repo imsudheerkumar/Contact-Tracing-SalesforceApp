@@ -2,7 +2,7 @@
  * @description       : 
  * @author            : Sudheer Kumar Gandham
  * @group             : 
- * @last modified on  : 03-26-2021
+ * @last modified on  : 29-03-2021
  * @last modified by  : Sudheer Kumar Gandham
  * Modifications Log 
  * Ver   Date         Author                  Modification
@@ -53,6 +53,15 @@ public with sharing class CTLocationController {
             return locationdetail[0];
         }
         return null;
+    }
+
+    public static Map<String,Integer> getStatusCount(){
+        Map<String,Integer> mapHealthStatus = new Map<String,Integer>();
+        for(AggregateResult var : [SELECT Status__c status, COUNT(Id) statusCount FROM Location__c GROUP BY Status__c]) {
+            // map Healthstatuscode and Count
+            mapHealthStatus.put(String.valueOf(var.get('status')), Integer.valueOf(var.get('statusCount')));
+        }
+        return mapHealthStatus;
     }
 
 }

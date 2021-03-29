@@ -46,6 +46,11 @@
         return null;
     }
 
+    /**
+    * @description 
+    * @author Sudheer Kumar Gandham | 29-03-2021 
+    * @return Map<String, Integer> 
+    **/
     public static Map<String,Integer> getHealthStatusCount(){
         Map<String,Integer> mapHealthStatus = new Map<String,Integer>();
         for(AggregateResult var : [SELECT Health_Status__c healthStatusCode,COUNT(Id) numberOfPersons FROM Person__c GROUP BY Health_Status__c]) {
