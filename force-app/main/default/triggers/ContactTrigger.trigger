@@ -7,20 +7,12 @@ trigger ContactTrigger on Contact (after insert,after update,after delete, after
             contactUpdateClass.afterInsertHandler(Trigger.New);
             
         }
-        when BEFORE_UPDATE{
-            
-        }
         when AFTER_UPDATE{
-           // contactUpdateClass.afterUpdateHandler(Trigger.New,Trigger.Oldmap);
-            
-        }
-        when BEFORE_DELETE{
+            contactUpdateClass.afterUpdateHandler(Trigger.New,Trigger.oldMap);
             
         }
         when AFTER_DELETE{
             //contactUpdateClass.updateAccountRecord(Trigger.New);
         }
     }
-    
-    
 }
