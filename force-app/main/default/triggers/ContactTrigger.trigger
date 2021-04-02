@@ -2,7 +2,7 @@
  * @description       : 
  * @author            : Sudheer Kumar Gandham
  * @group             : 
- * @last modified on  : 01-04-2021
+ * @last modified on  : 02-04-2021
  * @last modified by  : Sudheer Kumar Gandham
  * Modifications Log 
  * Ver   Date         Author                  Modification
@@ -17,10 +17,10 @@ trigger ContactTrigger on Contact (after insert,after update,after delete, after
             contactUpdateClass.afterUpdateHandler(Trigger.New,Trigger.oldMap);
         }
         when AFTER_DELETE{
-            //contactUpdateClass.updateAccountRecord(Trigger.New);
+            contactUpdateClass.afterDeleteHandler(Trigger.old);
         }
         when AFTER_UNDELETE{
-            //
+            contactUpdateClass.afterUndeleteHandler(Trigger.new);
         }
     }
 }
