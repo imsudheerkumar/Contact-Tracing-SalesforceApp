@@ -11,16 +11,16 @@
 trigger ContactTrigger on Contact (after insert,after update,after delete, after undelete) {
     switch on Trigger.operationType {
         when AFTER_INSERT{
-            ContactUpdateClass.afterInsertHandler(Trigger.new);
+            contactUpdateClass.afterInsertHandler(Trigger.new);
         }
         when AFTER_UPDATE{
-            ContactUpdateClass.afterUpdateHandler(Trigger.new,Trigger.oldMap);
+            contactUpdateClass.afterUpdateHandler(Trigger.new,Trigger.oldMap);
         }
         when AFTER_DELETE{
-            ContactUpdateClass.afterDeleteHandler(Trigger.old);
+            contactUpdateClass.afterDeleteHandler(Trigger.old);
         }
         when AFTER_UNDELETE{
-            ContactUpdateClass.afterUndeleteHandler(Trigger.new);
+            contactUpdateClass.afterUndeleteHandler(Trigger.new);
         }
     }
 }

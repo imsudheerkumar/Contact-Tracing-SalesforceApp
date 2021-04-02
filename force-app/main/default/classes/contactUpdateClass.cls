@@ -8,7 +8,7 @@
  * Ver   Date         Author                  Modification
  * 1.0   02-04-2021   Sudheer Kumar Gandham   Initial Version
 **/
-public class ContactUpdateClass {
+public class contactUpdateClass {
     public static void afterInsertHandler(List<Contact> contactRecords){ 
         Set<Id> accountIds = new Set<Id>();
         for(Contact con : contactRecords){
