@@ -2,7 +2,7 @@
  * @description       : 
  * @author            : Sudheer Kumar Gandham
  * @group             : 
- * @last modified on  : 02-04-2021
+ * @last modified on  : 03-04-2021
  * @last modified by  : Sudheer Kumar Gandham
  * Modifications Log 
  * Ver   Date         Author                  Modification
@@ -25,7 +25,8 @@ public class contactUpdateClass {
         for(Contact con : contactRecords){
             if(String.isNotBlank(con.AccountId) && oldContactsMap.get(con.Id).isActive__c != con.isActive__c){
                 accountIds.add(con.AccountId);
-            } else if (oldContactsMap.get(con.Id).AccountId!= con.AccountId){
+            }
+            if (oldContactsMap.get(con.Id).AccountId!= con.AccountId){
                 accountIds.add(oldContactsMap.get(con.Id).AccountId);
                 accountIds.add(con.AccountId);
             }
