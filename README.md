@@ -41,4 +41,3 @@
    ```
    sfdx force:org:open
    ```
-{"mode":"full","isActive":false}
